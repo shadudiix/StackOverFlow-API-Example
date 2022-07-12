@@ -19,7 +19,7 @@ class NetworkManager {
         var HttpRequest = URLRequest(url: url)
         HttpRequest.httpMethod = "GET"
         HttpRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let Httptask = URLSession.shared.dataTask(with: url) { data, response, error in
+        let Httptask = URLSession.shared.dataTask(with: HttpRequest) { data, response, error in
             if let _ = error  {
                 // we don't need to use guard, we will not use error in this fucntion again, we just check if there are an error or not..
                 taskCompleted([], false)
